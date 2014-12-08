@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        title NPM Scripts Demo
+        script(src="#{locals['dist/main.js'].substr(5)}")
+        if compileDebug
+            script(src="//localhost:9091/livereload.js")
+
+        link(rel="stylesheet",href="#{locals['dist/main.css'].substr(5)}")
+      body
+        h1 npm scripts demo
+        #container
+            p.
+                All of this content was created using various preprocessors and
+                compilers, as well as test tools and watchers, without using
+                Grunt, Gulp, Brocolli, Fez, Jake, etc.
