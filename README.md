@@ -75,6 +75,23 @@ tool, you can actually get that executed by adding it to your setup, wait until 
 picked up the update and ran it, and then remove the 'cleanall'. All this without having
 to update the tool's configuration.
 
+If you use 'grunt' or 'gulp' to do your builds all you need to do is add a tasks similar to
+these:
+
+    "build": "npm run build:dist",
+    "build:dist": "grunt dist",
+
+Again, one advantage to this technique is that if you want to build something else
+than "grunt dist" you can easily change it here. (I know you could also change the default target
+in the "GruntFile.js" too.) What if some some (probably stupid) reason, you needed to use a
+second build type. You could change that here too.
+
+    "build:dist": "grunt && gulp",
+
+Another advantage of setting this up in 'package.json' will be that you won't have to maintain
+separate documentation for your tool (like jenkins). All projects would be configured in the
+same manner.
+
 # Updated script
 
 Since it is very possible that the 'scripts' section lost it's comments after an update,
