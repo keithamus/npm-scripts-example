@@ -34,7 +34,7 @@ The example above could be modified thus but the comments will eventually end up
 
 # Possible Unix adjustments if the above 'demo:window:conflict' example was to be needed
 
-The code `dirname \"$BASH\"`/find is required in Windows because the FIND command also exists
+The code \`dirname \"$BASH\"\`/find is required in Windows because the FIND command also exists
 in Windows, and since many corporate users have no control on where the Windows executable
 directories will be listed in the PATH variable, it is possible that the wrong FIND command
 would be used. This method will invoke the Unix like FIND command found in the same directory as
@@ -68,7 +68,7 @@ to update the tool's configuration.
 Since it is very possible that the 'scripts' section lost it's comments after an update,
 here it is:
 
-  "scripts": {
+    "scripts": {
     "comments": "For these commands to work you need to have 'bash' available. In a Unix",
     "comments": "environment that is likely a moth point. But in Windows you probably have",
     "comments": "it if you installed Git for Windows. It is found in /path/to/Git/bin and",
@@ -119,7 +119,7 @@ here it is:
     "comments": "If this file is updated automatically, only the last 'comments' will be retained",
     "comments": "which means this isn't a practical way of adding permanent comments.",
     "comments": "echo You can have multiple comment entries, but if you \"npm run comments\" only the last one is used."
-  }
+    }
 
 ## Contributing
 
