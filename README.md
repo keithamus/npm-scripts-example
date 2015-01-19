@@ -32,7 +32,10 @@ The example above could be modified thus but the comments will eventually end up
     "demo:window:conflict:c01": "This is an example on how to invoke a command (like 'find') whose name also exist in Windows and",
     "demo:window:conflict:c02": "might be found on the PATH before the one on /path/to/Git/bin.",
 
-# Possible Unix adjustments if the above 'demo:window:conflict' example was to be needed
+# Possible Unix adjustments
+
+If something like the above 'demo:window:conflict' example is needed you may have to do some
+adjustments in Unix.
 
 The code \`dirname \"$BASH\"\`/find is required in Windows because the FIND command also exists
 in Windows, and since many corporate users have no control on where the Windows executable
@@ -44,21 +47,30 @@ However, on Unix it is possible that BASH and FIND are not located in the same d
 solution is to create a link, either hard or symbolic, so that FIND is located in the same place
 as where BASH is executed from.
 
+Another possible fix would be to create a script called "myfind", but you would have to make it
+available in both environments, and all Windows developers would need to create it too. I can
+think of ways to facilitate that, but overall I figured a single fix to a Unix machine was easier.
+
 # Standard tasks
 
-I added a 'setup' and 'cleanall' task for practicality. If I an not going to use a project
-much after I finished developing it, I think a 'cleanall' is useful to recover the disk
-space. The 'setup' is useful to perform all the steps that are required prior to building
-the project. Granter that you could put it in a 'prebuild', but I don't want to re-execute
+I added a 'setup' and 'cleanall' task for practicality.
+
+cleanup: If I am not going to use a project much after I finished developing it, I think
+a 'cleanall' is useful to recover the disk space.
+
+setup: The 'setup' is useful to perform all the steps that are required prior to building
+the project. Granted that you could put it in a 'prebuild', but I don't want to re-execute
 the setup every time I perform a build.
 
-Also, if you use some sort of automated tool to monitor and rebuild your projects, you won't
-need to go back to it should you add another requirement. For example, if initially you did
-not use 'bower' and later add it to your project, you would have to update that tool's
-configuration to know that in addition to 'npm install" you now require 'bower install'
-to run too before doing a build. Using 'setup' you can configure that tool to execute
-'npm run setup' and 'npm run build' and never have to modify it's configuration. Even if
-something seems messed up and you feel like there should be a 'cleanall' done in that
+Also, if you use some sort of automated tool to monitor and rebuild your projects (like
+jenkins), you won't need to go back to it should you add another requirement. For example,
+if initially you did not use 'bower' and later add it to your project, you would normally
+have to update that tool's configuration to inform it that in addition to 'npm install"
+you now require 'bower install' to run too before doing a build. Using 'setup' you can
+configure that tool to execute 'npm run setup' and 'npm run build' and never have to
+modify it's configuration again.
+
+Even if something seems messed up and you feel like there should be a 'cleanall' done in that
 tool, you can actually get that executed by adding it to your setup, wait until the tool
 picked up the update and ran it, and then remove the 'cleanall'. All this without having
 to update the tool's configuration.
