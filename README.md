@@ -83,7 +83,7 @@ these:
 
 Again, one advantage to this technique is that if you want to build something else
 than "grunt dist" you can easily change it here. (I know you could also change the default target
-in the "GruntFile.js" too.) What if some some (probably stupid) reason, you needed to use a
+in the "GruntFile.js" too.) What if for some (probably stupid) reason, you needed to use a
 second build type. You could change that here too.
 
     "build:dist": "grunt && gulp",
