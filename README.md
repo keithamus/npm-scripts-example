@@ -91,7 +91,7 @@ here it is:
     "cleanall": "npm run clean:all",
 
     "comments": "We need to use rifraf because in Windows we get 'File or path name too long'",
-    "comments": "and we don't delete 'node_modules/.bin' until 'rifraf' is done. (Ps. %#59; is the semi-colon.)",
+    "comments": "and we don't delete 'node_modules/.bin' until 'rifraf' is done.",
     "clean:all": "bash -c \"rm -rf dist/* bower_components ; rimraf node_modules/* ; rm -rf node_modules npm-debug.log \"",
     "clean:dist": "bash -c 'rimraf dist/*'",
 
