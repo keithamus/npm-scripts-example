@@ -7,6 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^6.3.2",
+    "build-jshint": "^0.1.0",
     "hashmark": "^2.0.0",
     "http-server": "^0.7.3",
     "jade": "^1.7.0",
@@ -28,29 +29,23 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
-
     "prebuild": "npm run clean -s",
+    "lint": "node tools/jshintRunner.js",
     "build": "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
     "build:scripts": "browserify -d assets/scripts/main.js -p [minifyify --compressPath . --map main.js.map --output dist/main.js.map] | hashmark -n dist/main.js -s -l 8 -m assets.json 'dist/{name}{hash}{ext}'",
     "build:styles": "stylus assets/styles/main.styl -m -o dist/ && hashmark -s -l 8 -m assets.json dist/main.css 'dist/{name}{hash}{ext}'",
     "build:markup": "jade assets/markup/index.jade --obj assets.json -o dist",
-
     "test": "karma start --singleRun",
-
     "watch": "parallelshell \"npm run watch:test -s\" \"npm run watch:build -s\"",
     "watch:test": "karma start",
     "watch:build": "nodemon -q -w assets/ --ext '.' --exec 'npm run build'",
-
     "open:prod": "opener http://example.com",
     "open:stage": "opener http://staging.example.internal",
     "open:dev": "opener http://localhost:9090",
-
     "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/",
     "deploy:stage": "s3-cli sync ./dist/ s3://example-com/stage-site/",
-
     "serve": "http-server -p 9090 dist/",
     "live-reload": "live-reload --port 9091 dist/",
-
     "dev": "npm run open:dev -s & parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\""
   }
 }
