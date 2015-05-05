@@ -27,30 +27,30 @@
     "stylus": "^0.49.3"
   },
   "scripts": {
-    "clean": "rimraf dist/*",
+    "clean": "./node_modules/.bin/rimraf dist/*",
 
     "prebuild": "npm run clean -s",
     "build": "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
-    "build:scripts": "browserify -d assets/scripts/main.js -p [minifyify --compressPath . --map main.js.map --output dist/main.js.map] | hashmark -n dist/main.js -s -l 8 -m assets.json 'dist/{name}{hash}{ext}'",
-    "build:styles": "stylus assets/styles/main.styl -m -o dist/ && hashmark -s -l 8 -m assets.json dist/main.css 'dist/{name}{hash}{ext}'",
-    "build:markup": "jade assets/markup/index.jade --obj assets.json -o dist",
+    "build:scripts": "./node_modules/.bin/browserify -d assets/scripts/main.js -p [minifyify --compressPath . --map main.js.map --output dist/main.js.map] | ./node_modules/.bin/hashmark -n dist/main.js -s -l 8 -m assets.json 'dist/{name}{hash}{ext}'",
+    "build:styles": "./node_modules/.bin/stylus assets/styles/main.styl -m -o dist/ && ./node_modules/.bin/hashmark -s -l 8 -m assets.json dist/main.css 'dist/{name}{hash}{ext}'",
+    "build:markup": "./node_modules/.bin/jade assets/markup/index.jade --obj assets.json -o dist",
 
-    "test": "karma start --singleRun",
+    "test": "./node_modules/karma/bin/karma start --singleRun",
 
-    "watch": "parallelshell \"npm run watch:test -s\" \"npm run watch:build -s\"",
-    "watch:test": "karma start",
-    "watch:build": "nodemon -q -w assets/ --ext '.' --exec 'npm run build'",
+    "watch": "./node_modules/.bin/parallelshell \"npm run watch:test -s\" \"npm run watch:build -s\"",
+    "watch:test": "./node_modules/.bin/karma start",
+    "watch:build": "./node_modules/.bin/nodemon -q -w assets/ --ext '.' --exec 'npm run build'",
 
-    "open:prod": "opener http://example.com",
-    "open:stage": "opener http://staging.example.internal",
-    "open:dev": "opener http://localhost:9090",
+    "open:prod": "./node_modules/.bin/opener http://example.com",
+    "open:stage": "./node_modules/.bin/opener http://staging.example.internal",
+    "open:dev": "./node_modules/.bin/opener http://localhost:9090",
 
-    "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/",
-    "deploy:stage": "s3-cli sync ./dist/ s3://example-com/stage-site/",
+    "deploy:prod": "./node_modules/.bin/s3-cli sync ./dist/ s3://example-com/prod-site/",
+    "deploy:stage": "./node_modules/.bin/s3-cli sync ./dist/ s3://example-com/stage-site/",
 
-    "serve": "http-server -p 9090 dist/",
-    "live-reload": "live-reload --port 9091 dist/",
+    "serve": "./node_modules/.bin/http-server -p 9090 dist/",
+    "live-reload": "./node_modules/.bin/live-reload --port 9091 dist/",
 
-    "dev": "npm run open:dev -s & parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\""
+    "dev": "npm run open:dev -s & ./node_modules/.bin/parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\""
   }
 }
