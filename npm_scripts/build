@@ -1,0 +1,5 @@
+#!/bin/bash
+
+npm start clean -s &&
+for cmd in npm_scripts/build_*; do echo $cmd; $cmd $*; done
+wait # for background jobs to finish

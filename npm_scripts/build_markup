@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jade assets/markup/index.jade --obj assets.json -o dist

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+live-reload --port 9091 dist/

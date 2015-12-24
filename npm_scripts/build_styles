@@ -1,0 +1,4 @@
+#!/bin/bash
+
+stylus assets/styles/main.styl -m -o dist/ &&
+hashmark -s -l 8 -m assets.json dist/main.css 'dist/{name}{hash}{ext}'

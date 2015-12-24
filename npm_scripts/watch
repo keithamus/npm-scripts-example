@@ -1,0 +1,4 @@
+#!/bin/bash
+
+for cmd in npm_scripts/watch_*; do echo $cmd; $cmd $* & done
+wait # for background jobs to finish
