@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nodemon -q -w assets/ --ext '.js' --exec 'npm start build'

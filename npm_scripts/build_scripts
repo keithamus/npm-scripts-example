@@ -1,0 +1,4 @@
+#!/bin/bash
+
+browserify -d assets/scripts/main.js -p [minifyify --compressPath . --map main.js.map --output dist/main.js.map] | \
+hashmark -n dist/main.js -s -l 8 -m assets.json 'dist/{name}{hash}{ext}'

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+opener http://localhost:9090
