@@ -17,7 +17,7 @@
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "live-reload": "^0.2.0",
-    "minifyify": "^4.4.0",
+    "minifyify": "^6.0.0",
     "mocha": "^2.0.1",
     "nodemon": "^1.2.1",
     "opener": "^1.4.0",
