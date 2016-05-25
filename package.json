@@ -16,7 +16,6 @@
     "karma-cli": "^0.0.4",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
-    "live-reload": "^0.2.0",
     "minifyify": "^6.0.0",
     "mocha": "^2.0.1",
     "nodemon": "^1.2.1",
@@ -49,8 +48,7 @@
     "deploy:stage": "s3-cli sync ./dist/ s3://example-com/stage-site/",
 
     "serve": "http-server -p 9090 dist/",
-    "live-reload": "live-reload --port 9091 dist/",
 
-    "dev": "npm run open:dev -s && parallelshell \"npm run live-reload -s\" \"npm run serve -s\" \"npm run watch -s\""
+    "dev": "npm run serve -s & parallelshell \"npm run open:dev -s\" \"npm run watch -s\""
   }
 }
