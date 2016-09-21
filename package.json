@@ -6,7 +6,7 @@
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^6.3.2",
+    "browserify": "^13.1.0",
     "hashmark": "^2.0.0",
     "http-server": "^0.7.3",
     "jade": "^1.7.0",
