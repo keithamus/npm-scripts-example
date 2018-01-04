@@ -1,6 +1,6 @@
 # NPM Scripts Example
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/ygkcNhfZ9nTDeVM6P8LSGn1C/keithamus/npm-scripts-example'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/ygkcNhfZ9nTDeVM6P8LSGn1C/keithamus/npm-scripts-example.svg' /></a>
+
 
 Firstly, you should go and read [how to use NPM as a build tool][post]. Then
 come back here and explore the repository. It's fairly standard, and the bare
