@@ -30,6 +30,6 @@ If you want to add banner to output file, you could reproduce the following step
 
 ## Demo available on its dedicated branch
 
-This tips has been implemented on its own branch `add-text-banner-to-output-file` (based on the master).
+This tips has been implemented on its own branch `tips/add-text-banner-to-output-file` (based on the master).
 
 Once you are on the branch, do `npm install` if necessary, then `npm run build:banner` which will run `stylus assets/styles/main.styl --print | node ./add-banner.js > dist/main.css` ...
