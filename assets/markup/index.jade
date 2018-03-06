@@ -4,7 +4,10 @@ html(lang="en")
         title NPM Scripts Demo
         script(src="#{locals['dist/main.js'].substr(5)}")
         if compileDebug
-            script(src="//localhost:9091/livereload.js")
+          script.
+            setInterval(function() {
+              window.location.reload();
+            }, 2000);
 
         link(rel="stylesheet",href="#{locals['dist/main.css'].substr(5)}")
       body
