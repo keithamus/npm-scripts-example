@@ -47,7 +47,7 @@
     "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/",
     "deploy:stage": "s3-cli sync ./dist/ s3://example-com/stage-site/",
     "serve": "http-server -p 9090 dist/",
-    "live-reload": "live-reload --port=9091 dist/",
+    "live-reload": "live-reload --port=9091 --delay=1250 dist/",
     "dev": "npm-run-all \"open:dev -s\" --parallel \"live-reload -s\" \"serve -s\" \"watch -s\""
   }
 }
