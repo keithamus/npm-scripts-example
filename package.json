@@ -26,6 +26,10 @@
     "s3-cli": "^0.11.1",
     "stylus": "^0.49.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keithamus/npm-scripts-example.git"
+  },
   "scripts": {
     "clean": "rimraf dist/*",
 
