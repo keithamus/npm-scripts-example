@@ -19,12 +19,13 @@
     "live-reload": "^1.1.0",
     "minifyify": "^6.0.0",
     "mocha": "^2.0.1",
-    "nodemon": "^1.2.1",
+    "nodemon": "^1.17.1",
     "npm-run-all": "^4.1.2",
     "opener": "^1.4.0",
     "rimraf": "^2.2.8",
     "s3-cli": "^0.11.1",
-    "stylus": "^0.49.3"
+    "stylus": "^0.49.3",
+    "wait-on": "^2.1.0"
   },
   "repository": {
     "type": "git",
@@ -43,11 +44,11 @@
     "watch:build": "nodemon -q -w assets/ --ext \".\" --exec \"npm run build\"",
     "open:prod": "opener http://example.com",
     "open:stage": "opener http://staging.example.internal",
-    "open:dev": "opener http://localhost:9090",
+    "open:dev": "wait-on http://localhost:9090 && opener http://localhost:9090",
     "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/",
     "deploy:stage": "s3-cli sync ./dist/ s3://example-com/stage-site/",
     "serve": "http-server -p 9090 dist/",
-    "live-reload": "live-reload --port=9091 --delay=1250 dist/",
+    "live-reload": "live-reload --port=9091 --delay=2000 dist/",
     "dev": "npm-run-all --parallel \"live-reload -s\" \"serve -s\" \"watch -s\" \"open:dev -s\""
   }
 }
