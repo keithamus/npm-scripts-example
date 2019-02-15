@@ -15,7 +15,7 @@ seeing some great ways to optimise this.
 
 Several scripts use the `npm` `-s` flag to silence `npm`'s output from the subtasks, which makes the log output a little tidier (it is a shortcut for --loglevel=silent, read more on npms documentation for flags: https://docs.npmjs.com/misc/config#default-configs).
 
-[post]: http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool
+[post]: https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
 
 ## Tips and tricks
 
